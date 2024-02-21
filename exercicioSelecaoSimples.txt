@@ -1,0 +1,11 @@
+-- Exercício de seleção simples em banco de dados, utilizando SQL Server. A seleção está retornando todos os nomes de clientes e endereços válidos.
+SELECT
+    Principal.CompanyName, Principal.CustomerID, Terciaria.AddressLine1
+FROM
+    [SalesLT].[Customer] AS Principal
+INNER JOIN
+    SalesLT.CustomerAddress AS Secundaria 
+    ON Principal.CustomerID = Secundaria.CustomerID
+INNER JOIN
+    SalesLT.Address AS Terciaria
+    ON Terciaria.AddressID = Secundaria.AddressID
