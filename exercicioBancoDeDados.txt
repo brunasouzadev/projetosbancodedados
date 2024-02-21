@@ -1,0 +1,13 @@
+SELECT *
+    FROM [SalesLT].[Product]
+
+SELECT
+    MAX(StandardCost), MIN(standardCost)
+FROM
+    [SalesLT].[Product]
+where 
+    Size = 'L' 
+    and SellStartDate is not NULL
+    and SellEndDate is not null
+    and SellStartDate > '2005-07-01 00:00:00.000'
+    and SellStartDate < '2006-07-02 00:00:00.000'
